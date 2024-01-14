@@ -36,8 +36,6 @@ html {
 body {
   position: relative;
   overflow-x: hidden;
-  min-width: 320px;
-  min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,6 +46,11 @@ body {
 	line-height: 1.2;
   color: #1c1c1c;
   background-color: #fff;
+}
+
+#root {
+  min-width: 320px;
+  min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }

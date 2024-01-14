@@ -1,5 +1,4 @@
 import { Contacts } from '../../components/Contacts/Contacts';
-import { Copyright } from '../../components/Copyright/Copyright';
 import { Developer } from '../../components/Developer/Developer';
 import { Logo } from '../../components/Logo/Logo';
 import { Container } from '../Container/Container';
@@ -18,9 +17,8 @@ export const Footer = () => (
       <div className={style.developer}>
         <Developer />
       </div>
-      <div className={style.copyright}>
-        <Copyright />
-      </div>
+
+      <p className={style.copyright}>© Koff, 2024</p>
     </Container>
   </footer>
 );

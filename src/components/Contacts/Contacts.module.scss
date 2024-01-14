@@ -1,0 +1,48 @@
+.сontacts {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.phone {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  gap: 8px;
+}
+
+.link {
+  border-radius: 4px;
+  outline-offset: 4px;
+  outline: 1px solid transparent;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #9200b7;
+
+    svg {
+      fill: #9200b7;
+    }
+  }
+
+  &:active {
+    color: #780096;
+
+    svg {
+      fill: #780096;
+    }
+  }
+
+  &:focus-visible {
+    color: #9200b7;
+    outline-color: #9200b7;
+
+    svg {
+      fill: #9200b7;
+    }
+  }
+}

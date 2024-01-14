@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  border-radius: 4px;
+  outline-offset: 2px;
+  outline: 1px solid transparent;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #9200b7;
+  }
+
+  &:active {
+    color: #780096;
+  }
+
+  &:focus-visible {
+    color: #9200b7;
+    outline-color: #9200b7;
+  }
+}

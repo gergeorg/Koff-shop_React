@@ -1,0 +1,60 @@
+.navigation {
+  display: flex;
+  gap: 16px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  outline-offset: 4px;
+  outline: 1px solid transparent;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #9200b7;
+
+    svg {
+      stroke: #9200b7;
+    }
+  }
+
+  &:active {
+    color: #780096;
+
+    svg {
+      stroke: #780096;
+    }
+  }
+
+  &:focus-visible {
+    color: #9200b7;
+    outline-color: #9200b7;
+
+    svg {
+      stroke: #9200b7;
+    }
+  }
+
+  @media (min-width: 580px) {
+    flex-direction: row;
+  }
+}
+
+svg {
+  stroke: #1c1c1c;
+  fill: transparent;
+  transition: stroke 0.3s ease-in-out;
+}
+
+.text {
+  position: fixed;
+  transform: scale(0);
+
+  @media (min-width: 580px) {
+    position: unset;
+    transform: scale(1);
+  }
+}
