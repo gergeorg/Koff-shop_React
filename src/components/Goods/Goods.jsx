@@ -11,6 +11,21 @@ export const Goods = () => (
         <li>
           <CardItem />
         </li>
+        <li>
+          <CardItem />
+        </li>
+        <li>
+          <CardItem />
+        </li>
+        <li>
+          <CardItem />
+        </li>
+        <li>
+          <CardItem />
+        </li>
+        <li>
+          <CardItem />
+        </li>
       </ul>
     </Container>
   </section>
