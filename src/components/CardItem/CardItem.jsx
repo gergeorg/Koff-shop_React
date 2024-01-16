@@ -1,20 +1,21 @@
+import { API_URL } from '../../const';
 import style from './CardItem.module.scss';
 
-import photo from './photo.jpg';
-
-export const CardItem = () => (
+export const CardItem = ({ name, price, image }) => (
   <article className={style.card}>
     <a href='#' className={style.link}>
-      <img className={style.img} src={photo} alt='' />
+      <img className={style.img} src={`${API_URL}/${image}`} alt={name} />
     </a>
 
     <div className={style.info}>
-      <h3 className={style.title}>Кресло с подлокотниками</h3>
-      <p className={style.price}>5 000 ₽</p>
+      <h3 className={style.title}>{name}</h3>
+      <p className={style.price}>{price} ₽</p>
     </div>
 
     <button className={style.btn}>В корзину</button>
-    <button className={style.favorite} aria-label='Добавить товар в избранное'>
+    <button
+      className={style.favorite}
+      aria-label={`Добавить товар ${name} в избранное`}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='16'
