@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import style from './Navigation.module.scss';
 
 // import FavoriteIcon from './img/search.svg?react';
@@ -5,7 +6,7 @@ import style from './Navigation.module.scss';
 
 export const Navigation = () => (
   <nav className={style.navigation}>
-    <a className={style.link} href='/favorite'>
+    <Link className={style.link} to='/favorite'>
       <span className={style.text}>Избранное</span>
       {/* <FavoriteIcon /> */}
       <svg
@@ -22,9 +23,9 @@ export const Navigation = () => (
           strokeLinejoin='round'
         />
       </svg>
-    </a>
+    </Link>
 
-    <a className={style.link} href='/cart'>
+    <Link className={style.link} to='/cart'>
       <span className={style.text}>Корзина</span>
       <span>(5)</span>
       <svg
@@ -70,6 +71,6 @@ export const Navigation = () => (
         />
       </svg>
       {/* <CartIcon /> */}
-    </a>
+    </Link>
   </nav>
 );

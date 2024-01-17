@@ -56,8 +56,12 @@ body {
 }
 
 main {
-	flex-grow: 1;
+  flex-grow: 1;
   padding-bottom: 80px;
+
+  @media (min-width: 820px) {
+    padding-bottom: 100px;
+  }
 }
 
 img,
