@@ -187,6 +187,35 @@
 .like {
   width: 16px;
   height: 16px;
+  color: #fff;
+
+  &_active {
+    svg {
+      color: #780096;
+      stroke: #780096;
+    }
+  }
+
+  svg {
+    stroke: #1c1c1c;
+
+    &:hover,
+    &_active {
+      color: #780096;
+      stroke: #780096;
+
+      &:active {
+        color: #c0f;
+        stroke: #1c1c1c;
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: 1px solid #780096;
+    outline-offset: 2px;
+    border-radius: 50%;
+  }
 }
 
 .arrow {
