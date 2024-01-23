@@ -93,29 +93,29 @@
 	right: 12px;
 	width: 16px;
 	height: 16px;
-	color: #fff;
+	// color: #fff;
 
-	&_active {
-			svg {
-				color: #780096;
-				stroke: #780096;
-			}
-		}
+	// &_active {
+	// 		svg {
+	// 			color: #780096;
+	// 			stroke: #780096;
+	// 		}
+	// 	}
 
-	svg {
-		stroke: #1C1C1C;
+	// svg {
+	// 	stroke: #1C1C1C;
 
-		&:hover,
-		&_active {
-			color: #780096;
-			stroke: #780096;
+	// 	&:hover,
+	// 	&_active {
+	// 		color: #780096;
+	// 		stroke: #780096;
 
-			&:active {
-				color: #C0F;
-				stroke: #1C1C1C;
-			}
-		}
-	}
+	// 		&:active {
+	// 			color: #C0F;
+	// 			stroke: #1C1C1C;
+	// 		}
+	// 	}
+	// }
 
 	&:focus-visible {
 		outline: 1px solid #780096;
