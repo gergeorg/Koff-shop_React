@@ -1,6 +1,3 @@
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Thumbs } from 'swiper/modules';
-// import 'swiper/css';
 import style from './Card.module.scss';
 import { useEffect } from 'react';
 import { Container } from '../../views/Container/Container';
