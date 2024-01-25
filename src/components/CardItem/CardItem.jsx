@@ -6,12 +6,20 @@ import { FavoriteBtn } from '../FavoriteBtn/FavoriteBtn';
 export const CardItem = ({ name, price, images: [image], id }) => (
   <article className={style.card}>
     <Link to={`/product/${id}`} className={style.link}>
-      <img className={style.img} src={`${API_URL}/${image}`} alt={name} />
+      <img
+        className={style.img}
+        src={`${API_URL}/${image}`}
+        alt={name}
+        width='302'
+        height='250'
+      />
     </Link>
 
     <div className={style.info}>
       <h3 className={style.title}>
-        <Link to={`/product/${id}`}>{name}</Link>
+        <Link className={style.titleLink} to={`/product/${id}`}>
+          {name}
+        </Link>
       </h3>
       <p className={style.price}>{price.toLocaleString()}&nbsp;₽</p>
     </div>

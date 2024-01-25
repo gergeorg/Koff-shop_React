@@ -4,6 +4,8 @@ import style from './Catalog.module.scss';
 import { useEffect } from 'react';
 import { fetchCategories } from '../../store/categories/categories.slice';
 import { Link } from 'react-router-dom';
+import { BeatLoader } from 'react-spinners';
+import { Error } from '../../components/Error/Error';
 
 export const Catalog = () => {
   const dispatch = useDispatch();
@@ -15,10 +17,16 @@ export const Catalog = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <Container className={style.spinner}>
+        <BeatLoader color='#780096' />
+      </Container>
+    );
   }
 
-  if (error) return <div>Ошибка: {error}</div>;
+  if (error) {
+    return <Error error={error} />;
+  }
 
   return (
     <nav className={style.catalog}>

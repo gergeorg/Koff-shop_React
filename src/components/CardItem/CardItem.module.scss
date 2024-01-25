@@ -1,125 +1,155 @@
 .card {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .link {
-	display: block;
-	margin-bottom: 12px;
+  display: block;
+  margin-bottom: 12px;
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+  border-radius: 16px;
+  overflow: hidden;
 
-	@media (min-width: 580px) {
-		margin-bottom: 16px;
-	}
+  &:focus-visible {
+    outline-color: #780096;
+  }
+
+  @media (min-width: 580px) {
+    margin-bottom: 16px;
+  }
 }
 
 .img {
-	width: 100%;
-	object-fit: cover;
-	border-radius: 16px;
-	aspect-ratio: 7/6;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  aspect-ratio: 7/6;
+  transition: transform 0.3s ease-in-out;
 
-	@media (min-width: 580px) {
-		aspect-ratio: 23/20;
-	}
+  &:hover {
+    transform: scale(1.1);
+  }
 
-	@media (min-width: 820px) {
-		aspect-ratio: 151/125;
-	}
+  @media (min-width: 580px) {
+    aspect-ratio: 23/20;
+  }
+
+  @media (min-width: 820px) {
+    aspect-ratio: 151/125;
+  }
 }
 
 .info {
-	flex-grow: 1;
+  flex-grow: 1;
 
-	@media (min-width: 580px) {
-		display: flex;
-		gap: 5px;
-		margin-bottom: 20px;
-	}
+  @media (min-width: 580px) {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+.titleLink {
+  outline: 1px solid transparent;
+  border-radius: 4px;
+  outline-offset: 2px;
+  &:hover {
+    color: #780096;
+  }
+
+  &:focus-visible {
+    outline-color: #780096;
+  }
 }
 
 .title {
-	margin-bottom: 4px;
-	font-size: 12px;
-	font-weight: 400;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 400;
 
-	@media (min-width: 580px) {
-		padding-top: 3px;
-		font-size: 16px;
-		margin-bottom: 0;
-	}
+  transition: color 0.3s ease-in-out;
+
+  @media (min-width: 580px) {
+    padding-top: 3px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
 }
 
 .price {
-	margin-bottom: 12px;
-	font-size: 16px;
+  margin-bottom: 12px;
+  font-size: 16px;
 
-	@media (min-width: 580px) {
-		font-size: 20px;
-		margin-bottom: 0;
-	}
+  @media (min-width: 580px) {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .btn {
-	width: 100%;
-	padding: 12px 24px;
-	border-radius: 32px;
-	border: 1px solid #780096;
-	color: #780096;
-	transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 32px;
+  border: 1px solid #780096;
+  color: #780096;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 
-	&:hover {
-		outline: none;
-		background-color: #780096;
-		color: #fff;
-	}
+  &:hover {
+    outline: none;
+    background-color: #780096;
+    color: #fff;
+  }
 
-	&:focus-visible {
-		outline: none;
-		border: 1px solid #C0F;
-	}
+  &:focus-visible {
+    outline: none;
+    border: 1px solid #c0f;
+  }
 
-	&:active {
-		color: #C0F;
-		border: 1px solid #C0F;
-		background-color: transparent;
-	}
+  &:active {
+    color: #c0f;
+    border: 1px solid #c0f;
+    background-color: transparent;
+  }
 }
 
 .favorite {
-	position: absolute;
-	top: 12px;
-	right: 12px;
-	width: 16px;
-	height: 16px;
-	// color: #fff;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  // color: #fff;
 
-	// &_active {
-	// 		svg {
-	// 			color: #780096;
-	// 			stroke: #780096;
-	// 		}
-	// 	}
+  // &_active {
+  // 		svg {
+  // 			color: #780096;
+  // 			stroke: #780096;
+  // 		}
+  // 	}
 
-	// svg {
-	// 	stroke: #1C1C1C;
+  // svg {
+  // 	stroke: #1C1C1C;
 
-	// 	&:hover,
-	// 	&_active {
-	// 		color: #780096;
-	// 		stroke: #780096;
+  // 	&:hover,
+  // 	&_active {
+  // 		color: #780096;
+  // 		stroke: #780096;
 
-	// 		&:active {
-	// 			color: #C0F;
-	// 			stroke: #1C1C1C;
-	// 		}
-	// 	}
-	// }
+  // 		&:active {
+  // 			color: #C0F;
+  // 			stroke: #1C1C1C;
+  // 		}
+  // 	}
+  // }
 
-	&:focus-visible {
-		outline: 1px solid #780096;
-		outline-offset: 2px;
-		border-radius: 50%;
-	}
+  &:focus-visible {
+    outline: 1px solid #780096;
+    outline-offset: 2px;
+    border-radius: 50%;
+  }
 }

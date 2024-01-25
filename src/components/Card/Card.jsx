@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct } from '../../store/product/product.slice';
 import { Slider } from '../Slider/Slider';
 import { FavoriteBtn } from '../FavoriteBtn/FavoriteBtn';
+import { Error } from '../Error/Error';
+import { Spinner } from '../Spinner/Spinner';
 
 export const Card = () => {
   const { productId } = useParams();
@@ -18,8 +20,8 @@ export const Card = () => {
 
   const { product, loading, error } = useSelector((state) => state.product);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Ошибка: {error}</div>;
+  if (loading) return <Spinner />;
+  if (error) return <Error error={error} />;
   if (!product) return <div>Продукт не найден. Попробуйте позже</div>;
 
   return (

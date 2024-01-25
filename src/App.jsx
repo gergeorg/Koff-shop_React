@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { fetchAccessToken } from './store/auth/auth.slice';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import { Cart } from './components/Cart/Cart';
+import { Cart } from './views/Cart/Cart';
 import { Card } from './components/Card/Card';
 import { Catalog } from './views/Catalog/Catalog';
 import { Goods } from './views/Goods/Goods';

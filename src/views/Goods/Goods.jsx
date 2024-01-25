@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { fetchProducts } from '../../store/products/products.slice';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { Pagination } from '../../components/Pagination/Pagination';
+import { Error } from '../../components/Error/Error';
+import { Spinner } from '../../components/Spinner/Spinner';
 
 export const Goods = () => {
   const dispatch = useDispatch();
@@ -38,11 +40,15 @@ export const Goods = () => {
     }
   }, [dispatch, pathname, favoriteList, page]);
 
-  if (loading) {
-    return <div>Loading...</div>;
+  if (loading) return <Spinner />;
+  if (error) return <Error error={error} />;
+  if (pathname === '/favorite' && favoriteList.length === 0) {
+    return (
+      <Container>
+        <div className={style.text}>Вы ничего не добавили в избранное</div>
+      </Container>
+    );
   }
-
-  if (error) return <div>Ошибка: {error}</div>;
 
   return (
     <section className={style.goods}>
@@ -61,7 +67,7 @@ export const Goods = () => {
             {pagination ? <Pagination pagination={pagination} /> : ''}
           </>
         ) : (
-          <div>По вашему запросу товаров не найдено</div>
+          <div className={style.text}>По вашему запросу товаров не найдено</div>
         )}
       </Container>
     </section>

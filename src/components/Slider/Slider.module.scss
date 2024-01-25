@@ -59,6 +59,16 @@
   top: 50%;
   transform: translateY(-50%);
   width: 32px;
+  color: #fff;
+  opacity: 0.4;
+  transition:
+    color 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+
+  &:hover {
+    color: #780096;
+    opacity: 1;
+  }
 
   &_prev {
     left: 16px;
