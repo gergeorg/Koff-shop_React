@@ -8,6 +8,7 @@ import { Slider } from '../Slider/Slider';
 import { FavoriteBtn } from '../FavoriteBtn/FavoriteBtn';
 import { Error } from '../Error/Error';
 import { Spinner } from '../Spinner/Spinner';
+import { AddToCartBtn } from '../AddProductBtn/AddToCartBtn';
 
 export const Card = () => {
   const { productId } = useParams();
@@ -52,9 +53,7 @@ export const Card = () => {
             </table>
 
             <div className={style.btns}>
-              <button className={style.btn} type='button'>
-                В корзину
-              </button>
+              <AddToCartBtn className={style.btn} id={product?.id} />
               <FavoriteBtn
                 className={style.favorite}
                 id={product?.id}

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { API_URL } from '../../const';
 import style from './CardItem.module.scss';
 import { FavoriteBtn } from '../FavoriteBtn/FavoriteBtn';
+import { AddToCartBtn } from '../AddProductBtn/AddToCartBtn';
 
 export const CardItem = ({ name, price, images: [image], id }) => (
   <article className={style.card}>
@@ -24,7 +25,7 @@ export const CardItem = ({ name, price, images: [image], id }) => (
       <p className={style.price}>{price.toLocaleString()}&nbsp;₽</p>
     </div>
 
-    <button className={style.btn}>В корзину</button>
+    <AddToCartBtn className={style.btn} id={id} />
     <FavoriteBtn className={style.favorite} id={id} name={name} />
   </article>
 );

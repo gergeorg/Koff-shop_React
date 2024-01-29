@@ -189,55 +189,9 @@
   height: 16px;
   color: #fff;
 
-  // &_active {
-  //   svg {
-  //     color: #780096;
-  //     stroke: #780096;
-  //   }
-  // }
-
-  // svg {
-  //   stroke: #1c1c1c;
-
-  //   &:hover,
-  //   &_active {
-  //     color: #780096;
-  //     stroke: #780096;
-
-  //     &:active {
-  //       color: #c0f;
-  //       stroke: #1c1c1c;
-  //     }
-  //   }
-  // }
-
   &:focus-visible {
     outline: 1px solid #780096;
     outline-offset: 2px;
     border-radius: 50%;
-  }
-}
-
-.arrow {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-}
-
-.arrowNext {
-  right: 16px;
-
-  @media (min-width: 580px) {
-    right: 24px;
-  }
-}
-
-.arrowPrev {
-  left: 16px;
-
-  @media (min-width: 580px) {
-    left: 24px;
   }
 }

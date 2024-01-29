@@ -17,17 +17,17 @@
   grid-template-columns: 25vw min-content 1fr;
   grid-template-rows: min-content min-content 1fr;
   grid-template-areas:
-    "img title title"
-    "img article article"
-    "img control price";
+    'img title title'
+    'img article article'
+    'img control price';
 
   @media (min-width: 480px) {
     grid-template-columns: 120px 1fr min-content;
     gap: 6px 12px;
     grid-template-areas:
-      "img title price"
-      "img article article"
-      "img control .";
+      'img title price'
+      'img article article'
+      'img control .';
   }
 
   @media (min-width: 880px) {
@@ -45,6 +45,11 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #9200b7;
+  }
 
   @media (min-width: 480px) {
     font-size: 16px;
