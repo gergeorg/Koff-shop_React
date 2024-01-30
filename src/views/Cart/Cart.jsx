@@ -5,9 +5,10 @@ import { CartProducts } from '../../components/CartProducts/CartProducts';
 import { Container } from '../Container/Container';
 
 import style from './Cart.module.scss';
+import { Error } from '../../components/Error/Error';
 
 export const Cart = () => {
-  const { products, totalCount, totalPrice } = useSelector(
+  const { products, totalCount, totalPrice, error } = useSelector(
     (state) => state.cart,
   );
 
@@ -19,6 +20,10 @@ export const Cart = () => {
         </Container>
       </section>
     );
+  }
+
+  if (error) {
+    return <Error error={error} />;
   }
 
   return (

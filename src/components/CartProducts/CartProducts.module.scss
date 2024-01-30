@@ -45,10 +45,16 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
+  outline: 1px solid transparent;
   transition: color 0.3s ease-in-out;
 
   &:hover {
     color: #9200b7;
+  }
+
+  &:focus-visible {
+    color: #9200b7;
+    outline-color: #9200b7;
   }
 
   @media (min-width: 480px) {
@@ -100,7 +106,13 @@
   height: 14px;
   line-height: 14px;
   border: 1px solid transparent;
+  border-radius: 50%;
   outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  }
 
   &:focus-visible {
     border-color: #780096;

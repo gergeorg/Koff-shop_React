@@ -41,7 +41,6 @@ export const CartProducts = ({ products }) => {
             <Link className={style.titleProduct} to={`/product/${id}`}>
               {name}
             </Link>
-            {/* <h3 className={style.titleProduct}>{name}</h3> */}
             <p className={style.price}>{price.toLocaleString()}&nbsp;₽</p>
             <p className={style.article}>арт. {article}</p>
             <div className={style.productControl}>

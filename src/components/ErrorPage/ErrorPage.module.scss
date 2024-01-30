@@ -1,4 +1,7 @@
 .error {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding-top: 100px;
   text-align: center;
   color: #780096;

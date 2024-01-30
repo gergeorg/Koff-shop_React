@@ -77,7 +77,14 @@
   }
 }
 
+.labelTextarea {
+  @media (min-width: 580px) {
+    grid-column: 1/-1;
+  }
+}
+
 .textarea {
+  width: 100%;
   min-height: 120px;
   padding: 12px 14px;
   border-radius: 4px;
@@ -87,10 +94,6 @@
 
   &::placeholder {
     color: #969eae;
-  }
-
-  @media (min-width: 580px) {
-    grid-column: 1/-1;
   }
 }
 
@@ -121,7 +124,7 @@
   margin-right: 8px;
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     width: 12px;
     height: 12px;
@@ -131,7 +134,7 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;

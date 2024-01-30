@@ -1,42 +1,88 @@
+import { useDispatch, useSelector } from 'react-redux';
 import style from './CartForm.module.scss';
+import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { submitCartForm } from '../../store/formCart/formCartSlice';
 
 export const CartForm = () => {
-  console.log();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const orderStatus = useSelector((state) => state.formCart);
+
+  useEffect(() => {
+    if (orderStatus.success) {
+      navigate(`/order/${orderStatus.orderId}`);
+    }
+  }, [orderStatus, navigate]);
+
+  const onSubmit = (data) => {
+    dispatch(submitCartForm(data));
+  };
 
   return (
-    <form className={style.form}>
+    <form
+      className={style.form}
+      id='orderForm'
+      onSubmit={handleSubmit(onSubmit)}>
       <h4 className={style.subtitle}>Данные для доставки</h4>
 
       <fieldset className={style.fieldsetInput}>
-        <input
-          className={style.input}
-          type='text'
-          placeholder='Фамилия Имя Отчество'
-          name='name'
-        />
-        <input
-          className={style.input}
-          type='text'
-          placeholder='Телефон'
-          name='phone'
-        />
-        <input
-          className={style.input}
-          type='email'
-          placeholder='E-mail'
-          name='email'
-        />
-        <input
-          className={style.input}
-          type='text'
-          name='address'
-          placeholder='Адрес доставки'
-        />
-        <textarea
-          className={style.textarea}
-          name='comments'
-          placeholder='Комментарий к заказу'
-        />
+        <label>
+          <input
+            className={style.input}
+            type='text'
+            placeholder='Фамилия Имя Отчество'
+            {...register('name', { required: true })}
+          />
+          {errors.name && <p className={style.error}>Это поле обязательно</p>}
+        </label>
+
+        <label>
+          <input
+            className={style.input}
+            type='text'
+            placeholder='Телефон'
+            {...register('phone', { required: true })}
+          />
+          {errors.phone && <p className={style.error}>Это поле обязательно</p>}
+        </label>
+
+        <label>
+          <input
+            className={style.input}
+            type='email'
+            placeholder='E-mail'
+            {...register('email', { required: true })}
+          />
+          {errors.email && <p className={style.error}>Это поле обязательно</p>}
+        </label>
+
+        <label>
+          <input
+            className={style.input}
+            type='text'
+            placeholder='Адрес доставки'
+            {...register('address', { required: true })}
+          />
+          {errors.address && (
+            <p className={style.error}>Это поле обязательно</p>
+          )}
+        </label>
+
+        <label className={style.labelTextarea}>
+          <textarea
+            className={style.textarea}
+            placeholder='Комментарий к заказу'
+            {...register('comments')}
+          />
+        </label>
       </fieldset>
 
       <fieldset className={style.fieldsetRadio}>
@@ -45,9 +91,8 @@ export const CartForm = () => {
           <input
             className={style.radioInput}
             type='radio'
-            name='deliveryType'
             value='delivery'
-            required
+            {...register('deliveryType', { required: true })}
           />
           Доставка
         </label>
@@ -56,23 +101,24 @@ export const CartForm = () => {
           <input
             className={style.radioInput}
             type='radio'
-            name='deliveryType'
             value='pickup'
-            required
+            {...register('deliveryType', { required: true })}
           />
           Самовывоз
         </label>
+        {errors.deliveryType && (
+          <p className={style.error}>Выберите тип доставки</p>
+        )}
       </fieldset>
 
       <fieldset className={style.fieldsetRadio}>
         <legend className={style.legend}>Оплата</legend>
-        <label>
+        <label className={style.radio}>
           <input
             className={style.radioInput}
             type='radio'
-            name='paymentType'
             value='card'
-            required
+            {...register('paymentType', { required: true })}
           />
           Картой при получении
         </label>
@@ -81,12 +127,14 @@ export const CartForm = () => {
           <input
             className={style.radioInput}
             type='radio'
-            name='paymentType'
             value='cash'
-            required
+            {...register('paymentType', { required: true })}
           />
           Наличными при получении
         </label>
+        {errors.paymentType && (
+          <p className={style.error}>Выберите тип оплаты</p>
+        )}
       </fieldset>
     </form>
   );

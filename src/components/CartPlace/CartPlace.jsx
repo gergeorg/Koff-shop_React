@@ -17,7 +17,9 @@ export const CartPlace = ({ totalPrice, totalCount }) => {
       </div>
 
       <p className={style.placeDelivery}>Доставка 0&nbsp;₽</p>
-      <button className={style.placeBtn}>Оформить заказ</button>
+      <button className={style.placeBtn} form='orderForm'>
+        Оформить заказ
+      </button>
     </div>
   );
 };
