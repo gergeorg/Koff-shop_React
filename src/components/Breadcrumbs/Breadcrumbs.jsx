@@ -25,7 +25,7 @@ export const Breadcrumbs = () => {
               <span className={style.separator}>&gt;</span>
             </li>
 
-            {product?.name && (
+            {!category && product?.name && (
               <li className={style.item}>
                 <a>{product?.name}</a>
                 <span className={style.separator}>&gt;</span>
